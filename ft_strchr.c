@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dulrich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 14:05:57 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/04 16:55:33 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/04 17:03:47 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/04 17:47:24 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+char	ft_*strchr(const char *s, int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	else
-		return (0);
+	while (*s)
+	{
+		if (c == s)
+			return (s);
+		s++;
+	}
+	return (0);
+}
+
+#include <stdio.h>
+int	main(void)
+{
+	char	*s;
+	int		c;
+
+	s = "Hello";
+	c = 'e';
+	printf("%d", ft_strchr(*s, c));
 }
