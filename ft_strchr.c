@@ -6,17 +6,20 @@
 /*   By: dulrich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:03:47 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/04 17:47:24 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/04 17:53:46 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_*strchr(const char *s, int c)
+char	ft_strchr(const char *s, int c)
 {
-	while (*s)
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (c == s)
-			return (s);
-		s++;
+		if (c == s[i])
+			return (s[i]);
+		i++;
 	}
 	return (0);
 }
@@ -24,8 +27,8 @@ char	ft_*strchr(const char *s, int c)
 #include <stdio.h>
 int	main(void)
 {
-	char	*s;
-	int		c;
+	const char	*s;
+	int			c;
 
 	s = "Hello";
 	c = 'e';
