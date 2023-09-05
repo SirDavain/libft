@@ -6,25 +6,13 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 12:44:44 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/04 16:52:20 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/05 10:25:42 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isupper(int c)
-{
-	if (c >= 65 && c <= 90)
-		return (1);
-}
-
-int	ft_islower(int c)
-{
-	if (c >= 97 && c <= 122)
-		return (1);
-}
-
 int	ft_isalpha(int c)
 {
-	if (ft_isupper || ft_islower)
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
 	else
 		return (0);
@@ -35,6 +23,6 @@ int main(void)
 {
     int c;
 
-    c = 'h';
+    c = '2';
     printf("%i", ft_isalpha(c));
 }*/
