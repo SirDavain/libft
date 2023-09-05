@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 14:35:01 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/05 12:41:26 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/05 12:22:44 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/05 12:38:42 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s1[i] && s2[i] && n)
+	{
 		i++;
-	return (i);
-}
-
-#include <stdio.h>
-int main(void)
-{
-	const char	*s = "Hello";
-	printf("%zu", ft_strlen(s));
+		n--;
+	}
+	if (s1[i] > s2[i])
+		return (1);
+	else if (s1[i] < s2[i])
+		return (-1);
+	else
+		return (0);
 }
