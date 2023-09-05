@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 13:06:57 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/05 15:12:06 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/05 14:49:09 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/05 15:31:41 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memset(void *s, int c, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	while (n && (void *)s)
+	int	i;
+	int	result;
+
+	i = 0;
+	/*while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+		i++;
+	*/
+	while (!(nptr[i] >= '0' && nptr[i] <= '9'))
+		i++;
+	result = 0;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		(char *)s = c;
-		s++;
-		n--;
+		//var for storing the value with shift10 operation
+		result *= 10;
+		result += nptr[i++];
 	}
-	return ((void *)s);
+	return (result);
 }
 
+#include <stdio.h>
 int	main(void)
 {
-	char	*s;
-	size_t	n;
-	int		c;
-
-	s = "Hi there";
-	n = 3;
-	c = '.';
-	ft_memset(s, c, n);
+	const char	*nptr = "   z1234u";
+	int	result = ft_atoi(nptr);
+	printf("%i", result);
 }
