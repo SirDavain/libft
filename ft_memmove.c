@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:01:58 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/06 14:15:45 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/06 14:59:50 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*un_dest;
 	unsigned char	*un_src;
-	int				i;
+	size_t			i;
 
 	un_dest = (unsigned char *)dest;
 	un_src = (unsigned char *)src;
@@ -49,6 +49,6 @@ int main(void)
 	unsigned char src[] = "Hello World";
 	size_t n = 5;
 
-	*ft_memmove(dest, src, n);
+	ft_memmove(dest, src, n);
 	printf("%s", dest);
 }

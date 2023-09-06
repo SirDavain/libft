@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 17:03:47 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/06 14:44:11 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/06 14:26:07 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/06 15:08:36 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	unsigned char	un_c;
+	unsigned char	*x;
+	int				i;
 
+	x = (unsigned char *)s;
+	un_c = (unsigned char)c;
 	i = 0;
-	while (s[i])
+	while (x[i] && n > i)
 	{
-		if (c == s[i])
-			return (s[i]);
+		if (un_c == x[i])
+			return ((void *)x[i]);
 		i++;
 	}
 	return (NULL);
 }
 
-/*#include <stdio.h>
-int	main(void)
+#include <stdio.h>
+int main(void)
 {
-	const char	*s;
-	int			c;
+	unsigned char	src[] = "Hello World";
+	int				c = 'e';
+	size_t n = 5;
 
-	s = "Hello";
-	c = 'a';
-	printf("%c", *ft_strchr(s, c));
-}*/
+	printf("%c", ft_memchr(src, c, n));
+}
