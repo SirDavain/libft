@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 14:49:09 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/06 13:26:44 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/06 10:44:35 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/06 12:23:46 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	i;
-	int	result;
-	int	sign;
+	int				i;
+	unsigned char	*un_dest;
+	unsigned char	*un_src;
 
+	un_dest = (unsigned char *)dest;
+	un_src = (unsigned char *)src;
 	i = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	sign = 1;
-	if (nptr[i++] == '-')
-		sign = -1;
-	result = 0;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (un_src[i] && n)
 	{
-		result *= 10;
-		result += nptr[i++] - 48;
+		un_dest[i] = un_src[i];
+		i++;
+		n--;
 	}
-	return (result * sign);
+	return (un_dest);
 }
 
 #include <stdio.h>
-int	main(void)
+int main(void)
 {
-	const char	*nptr = "	 --1234u";
-	int	result = ft_atoi(nptr);
-	int alt_result = atoi(nptr);
-	printf("%d\n", result);
-	printf("%d", alt_result);
+	unsigned char dest[50];
+	unsigned char src[] = "Hello World";
+	size_t n = 5;
+
+	ft_memcpy(dest, src, n);
+	printf("%s", dest);
 }
