@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:06:57 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/05 17:07:39 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/06 09:33:10 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,29 @@
 
 void	ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	int		i;
+	unsigned char	*x;
+	unsigned char	unsigned_c;
 
+	x = (unsigned char *)s;
+	unsigned_c = (unsigned char)c;
 	i = 0;
 	while (n > i)
 	{
-		s = c;
+		x[i] = unsigned_c;
 		i++;
 	}
 }
 
+#include <stdio.h>
 int	main(void)
 {
-	char	*s;
+	char	s[] = "Hi there";
 	size_t	n;
 	int		c;
 
-	s = "Hi there";
 	n = 3;
 	c = '.';
 	ft_memset(s, c, n);
+	printf("%s", s);
 }
