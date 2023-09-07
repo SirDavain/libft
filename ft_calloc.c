@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 14:35:01 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/07 11:32:03 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/07 10:18:51 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/07 11:49:23 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
+	//difference: blocks of memory are initialized to zero
+	//nmemb is the number of blocks & size is the size of them
+	void	mem_block;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	(unsigned int *)mem_block = 0;
+	(void *)malloc()
 }
-
-/*#include <stdio.h>
-int main(void)
-{
-	const char	*s = "Hello";
-	printf("%zu", ft_strlen(s));
-}*/

@@ -1,56 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 10:40:44 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/07 11:32:05 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/07 11:50:34 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/07 12:37:20 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*substr;
 	size_t	i;
+	size_t	j;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(const char *s)
-{
-	char		*s1;
-	int			i;
-	int			length;
-
-	length = ft_strlen(s);
-	s1 = (char *)malloc((length + 1) * sizeof(char));
-	if (s1 == NULL)
+	substr = (char *)malloc((len - 1) * sizeof(char));
+	if (substr == NULL)
 		return (NULL);
 	i = 0;
-	while (length > i)
+	while (i < start)
+		i++;
+	j = 0;
+	while (s[i] && j < len - 1)
 	{
-		s1[i] = s[i];
+		substr[j] = s[i];
+		j++;
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	substr[j] = '\0';
+	return (substr);
 }
 
 /*#include <stdio.h>
 int	main(void)
 {
-	const char	*c;
-	char		*dup;
-	c = "Hello";
-	dup = ft_strdup(c);
-	printf("%s", dup);
+	char const	*s = "Hello world";
+	unsigned int start = 2;
+	size_t 		len = 3;
+	char		*result;
 
-	free(dup);
+	result = ft_substr(s, start, len);
+	printf("%s", result);
+
+	free(result);
 	return (0);
 }*/

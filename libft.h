@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:44:13 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/07 11:05:03 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/07 11:51:45 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # include <stddef.h>
 size_t	ft_strlen(const char *s);
 
+char	*ft_substr(char const *s, unsigned int start,size_t len);
 
 #endif
