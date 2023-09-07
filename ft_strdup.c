@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 14:35:01 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/07 11:04:55 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/07 10:40:44 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/07 11:06:41 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,31 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-/*#include <stdio.h>
-int main(void)
+char	*ft_strdup(const char *s)
 {
-	const char	*s = "Hello";
-	printf("%zu", ft_strlen(s));
+	char		*s1;
+	int			i;
+	int			length;
+
+	length = ft_strlen(s);
+	s1 = (char *)malloc((length + 1) * sizeof(char));
+	if (s1 == NULL)
+		return (NULL);
+	i = 0;
+	while (length > i)
+	{
+		s1[i] = s[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
+}
+
+/*#include <stdio.h>
+int	main(void)
+{
+	char	*c;
+	c = "Hello";
+	printf("%s", ft_strdup(c));
+	return (0);
 }*/
