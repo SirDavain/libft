@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:26:07 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/07 09:51:55 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/07 10:00:32 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ int main(void)
 		printf("%c", *(unsigned char *)result);
 	else
 		printf("Char not found.");
+	return (0);
 }*/

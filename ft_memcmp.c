@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 12:22:44 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/07 10:10:13 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/07 09:53:47 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/07 10:14:15 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	size_t			i;
+	unsigned char	*un_s1;
+	unsigned char	*un_s2;
 
+	if (n == 0)
+		return (0);
 	i = 0;
-	while (s1[i] == s2[i] && n > i)
+	while (un_s1[i] == un_s2[i] && n > i)
 		i++;
-	if (s1[i] > s2[i])
+	if (un_s1[i] > un_s2[i])
 		return (1);
-	else if (s1[i] < s2[i])
-		return (-1);
+	else if (un_s1[i] < un_s2[i])
+		return (1);
 	else
 		return (0);
 }
