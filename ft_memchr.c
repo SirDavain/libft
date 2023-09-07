@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:26:07 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/06 15:08:36 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/07 09:51:55 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	un_c;
 	unsigned char	*x;
-	int				i;
+	size_t			i;
 
 	x = (unsigned char *)s;
 	un_c = (unsigned char)c;
@@ -24,18 +24,22 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (x[i] && n > i)
 	{
 		if (un_c == x[i])
-			return ((void *)x[i]);
+			return ((void *)(x + i));
 		i++;
 	}
 	return (NULL);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void)
 {
 	unsigned char	src[] = "Hello World";
-	int				c = 'e';
+	int				c = 'o';
 	size_t n = 5;
 
-	printf("%c", ft_memchr(src, c, n));
-}
+	void *result = ft_memchr(src, c, n);
+	if (result != NULL)
+		printf("%c", *(unsigned char *)result);
+	else
+		printf("Char not found.");
+}*/

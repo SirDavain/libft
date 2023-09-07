@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:49:09 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/06 13:26:44 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/07 09:21:40 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
-	const char	*nptr = "	 --1234u";
+	const char	*nptr = "	 -1234u";
 	int	result = ft_atoi(nptr);
 	int alt_result = atoi(nptr);
 	printf("%d\n", result);
 	printf("%d", alt_result);
-}
+}*/
