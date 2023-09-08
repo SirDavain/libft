@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 09:37:23 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/06 10:42:33 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/08 08:30:19 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*x;
 
 	x = (unsigned char *)s;
