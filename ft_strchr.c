@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:03:47 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/06 14:44:11 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/08 11:41:57 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
+	//char	*first_occurence;
 
 	i = 0;
 	while (s[i])
@@ -26,7 +27,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 int	main(void)
 {
 	const char	*s;
@@ -35,4 +36,4 @@ int	main(void)
 	s = "Hello";
 	c = 'a';
 	printf("%c", *ft_strchr(s, c));
-}*/
+}
