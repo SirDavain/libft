@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:15:12 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/08 11:36:18 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/08 12:22:30 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i])
 	{
 		if (c == s[i])
-			return (s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
 	return (NULL);
@@ -40,7 +40,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	src_len;
-	
+
 	src_len = ft_strlen(src);
 	i = 0;
 	while (src[i] && i < size - 1)
@@ -67,7 +67,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = s1_len - 1;
 	while (start < end && ft_strchr(set, s1[end]))
 		end--;
-	s2_len = end - start  + 1;
+	s2_len = end - start + 1;
 	s2 = (char *)malloc((s2_len + 1) * sizeof(char));
 	if (!s2)
 		return (NULL);
@@ -85,28 +85,3 @@ int	main(void)
 
 	printf("%s", result);
 }
-
-/*char	*ft_strtrim(char const *s1, char const *set)
-{
-	char	*s2;
-	int		start;
-	int		end;
-	int		s2_len;
-
-	s2_len = ft_strlen(s1) - (2 * ft_strlen(set)) + 1;
-	s2 = malloc(s2_len * sizeof(char));
-	if (!s2)
-		return (NULL);
-	start = 0;
-	while (s1[start] && )
-		start++;
-	end = ft_strlen(s1) - 1;
-	while (s1[i] != set[j])
-	{
-		s2[j] = s1[i];
-		j++;
-		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
-}*/
