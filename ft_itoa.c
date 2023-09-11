@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:14:51 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/11 11:50:13 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/11 13:16:47 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,35 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-void	ft_reverse(char *s)
+static int	ft_num_count(int n)
+{
+	int	length;
+
+	length = 1;
+	while (n >= 10)
+	{
+		n /= 10;
+		length++;
+	}
+	return (length);
+}
+
+static void	ft_fill_string(char *s, int n, int sign)
+{
+	int	i;
+
+	i = 0;
+	while (n > 0)
+	{
+		s[i] = '0' + (n % 10);
+		n /= 10;
+		i++;
+	}
+	if (sign < 0)
+		s[i] = '-';
+}
+
+static void	ft_reverse(char *s)
 {
 	int		i;
 	int		j;
@@ -40,73 +68,32 @@ void	ft_reverse(char *s)
 	}
 }
 
-/*char	*ft_itoa(int n)
-{
-	char	*s;
-	int		sign;
-	int		i;
-
-	sign = n;
-	if (sign < 0)
-		n *= -1;
-	i = 0;
-	while (n > 0)
-	{
-		s[i] = n % 10;
-		n /= 10;
-		i++;
-	}
-	if (sign < 0)
-		s[i++] = '-';
-	s[i] = '\0';
-	ft_reverse(s);
-	s = malloc(ft_strlen(s) * sizeof(char));
-	if (!s)
-		return (NULL);
-	return (s);
-}*/
-
 char	*ft_itoa(int n)
 {
 	char	*s;
 	int		sign;
-	int		i;
 	int		length;
-	int		tmp;
 
 	sign = 1;
-	if (sign < 0)
+	if (n < 0)
 	{
 		sign = -1;
 		n = -n;
 	}
-	length = 1;
-	tmp = n;
-	while (n >= 10)
-	{
-		tmp /= 10;
-		length++;
-	}
-	s = (char *)malloc((length + 1) * sizeof(char));
+	length = ft_num_count(n);
+	s = (char *)malloc((length + (sign == -1) + 1) * sizeof(char));
 	if (!s)
 		return (NULL);
-	i = 0;
-	while (n > 0)
-	{
-		s[i] = n % 10;
-		n /= 10;
-		i++;
-	}
-	if (sign < 0)
-		s[i++] = '-';
+	s[0] = '\0';
+	ft_fill_string(s, n, sign);
 	ft_reverse(s);
 	return (s);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
-	int		n = 42;
+	int		n = -42;
 	char	*result = ft_itoa(n);
 	printf("%s", result);
-}
+}*/
