@@ -6,27 +6,37 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:26:31 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/08 14:43:11 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/11 16:20:26 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+static int	ft_count(const char *s, int c)
 {
 	int	i;
+	int	num_of_str;
+	int	str_len;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
+	num_of_str = 0;
+	str_len = 0;
 	while (s[i])
 	{
-		if (c == s[i])
-			return ((char *)&s[i]);
+		if (s[i] == c)
+		{
+			num_of_str++;
+			if (s[i] + 1 == c)
+				i++;
+		}
 		i++;
 	}
-	return (NULL);
+	return (num_of_str);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
@@ -49,9 +59,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-void	*array_maker()
+static void	*array_maker()
 {
-	/*
+	/*Get the substrings and put them into an array. Then 
 	*/
 }
 
@@ -59,20 +69,25 @@ char	**ft_split(char const *s, char c)
 {
 	char	**str_arr;
 	int		i;
-	char	*tmp_str;
+	int		num_of_splits;
+	char	*x;
 
-	
-	tmp_str = ft_substr(s, )
 
-	/*search for all instances of the delimiter and split the string
-	along them into separate ones.
-	Use strdup to put the new strings into the **str_arr
-	Use substr to get the new string and allocate memory for it
+	num_of_splits = mod_ft_strchr(s, c);
+	str_arr = (char **)malloc(num_of_splits + 1);
+	if (!str_arr)
+		return (NULL);
+	i = 0;
+	while (i < num_of_splits)
+	{
+		if ()
+		x = (ft_strchr(s, c) - s)
 
-	Find the first delim and replace it with a NULL. Then repeat until there's
-	no more of them. Then use 
-	*/
+		i++;
+	}
 
+	//end array with a null pointer
+	//free memory if any of the new strings are NULL (apart from null pointer)
 	return (*str_arr);
 }
 
