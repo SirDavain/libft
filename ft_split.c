@@ -6,94 +6,133 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:26:31 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/11 16:20:26 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/12 17:25:55 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
 static int	ft_count(const char *s, int c)
 {
 	int	i;
 	int	num_of_str;
-	int	str_len;
 
-	if (s == NULL)
-		return (NULL);
+	if (!s)
+		return (0);
 	i = 0;
 	num_of_str = 0;
-	str_len = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c)
 		{
 			num_of_str++;
-			if (s[i] + 1 == c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
-		i++;
+		else
+			i++;
 	}
 	return (num_of_str);
+}
+
+static void	ft_free_split(char **s)
+{
+	int	i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
 }
 
 static char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
-	size_t	j;
 
-	substr = (char *)malloc((len - 1) * sizeof(char));
-	if (substr == NULL)
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		len = 0;
+	else if (start + len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	substr = (char *)malloc((len + 1) * sizeof(char));
+	if (!substr)
 		return (NULL);
 	i = 0;
-	while (i < start)
-		i++;
-	j = 0;
-	while (s[i] && j < len - 1)
+	while (i < len)
 	{
-		substr[j] = s[i];
-		j++;
+		substr[i] = s[start + i];
 		i++;
 	}
-	substr[j] = '\0';
+	substr[i] = '\0';
 	return (substr);
-}
-
-static void	*array_maker()
-{
-	/*Get the substrings and put them into an array. Then 
-	*/
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**str_arr;
 	int		i;
-	int		num_of_splits;
-	char	*x;
+	int		num_of_str;
+	int		substr_len;
 
-
-	num_of_splits = mod_ft_strchr(s, c);
-	str_arr = (char **)malloc(num_of_splits + 1);
+	if (!s)
+		return (NULL);
+	num_of_str = ft_count(s, c);
+	str_arr = (char **)malloc((num_of_str + 1) * sizeof(char *));
 	if (!str_arr)
 		return (NULL);
 	i = 0;
-	while (i < num_of_splits)
+	while (num_of_str > 0)
 	{
-		if ()
-		x = (ft_strchr(s, c) - s)
-
+		while (*s && *s == c)
+			s++;
+		substr_len = 0;
+		while (s[substr_len] && s[substr_len] != c)
+			substr_len++;
+		str_arr[i] = ft_substr( s, 0, substr_len);
+		if (!str_arr[i])
+		{
+			ft_free_split(str_arr);
+			return (NULL);
+		}
+		s += substr_len;
 		i++;
+		num_of_str--;
 	}
-
-	//end array with a null pointer
-	//free memory if any of the new strings are NULL (apart from null pointer)
-	return (*str_arr);
+	str_arr[i] = NULL;
+	return (str_arr);
 }
 
 #include <stdio.h>
 int main(void)
 {
 	char c = ',';
-	char *s = "Hippo,po,ta,mus";
+	char *s = ",,Hippo,,,,po,ta,mus,,";
+	char **result;
+	
+	result = ft_split(s, c);
+	int i = 0;
+	while (result[i])
+	{
+		printf("%s", result[i]);
+		i++;
+	}
+	ft_free_split(result);
+	return (0);
 }
