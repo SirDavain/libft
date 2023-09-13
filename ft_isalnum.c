@@ -6,12 +6,11 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:42:40 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/04 16:56:12 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/13 10:14:13 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isalpha.c"
-#include "ft_isdigit.c"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

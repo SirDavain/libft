@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:26:31 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/12 17:25:55 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/13 10:11:25 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char	**ft_split(char const *s, char c)
 		substr_len = 0;
 		while (s[substr_len] && s[substr_len] != c)
 			substr_len++;
-		str_arr[i] = ft_substr( s, 0, substr_len);
+		str_arr[i] = ft_substr(s, 0, substr_len);
 		if (!str_arr[i])
 		{
 			ft_free_split(str_arr);
