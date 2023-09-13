@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:38:36 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/08 10:11:40 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/13 16:46:21 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		i++;
 	}
-	return ((char *)NULL);
+	return ((char *) NULL);
 }
 
 /*#include <stdio.h>
@@ -39,6 +39,6 @@ int	main(void)
 {
 	const char	*big = "Dinosaur";
 	const char	*little = "no";
-	size_t		len = 1;
+	size_t		len = 7;
 	printf("%s", ft_strnstr(big, little, len));
 }*/

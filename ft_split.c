@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:26:31 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/13 10:11:25 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/13 15:39:48 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,41 @@ static char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	substr[i] = '\0';
 	return (substr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**str_arr;
+	int		i;
+	int		num_of_str;
+	int		substr_len;
+
+	if (!s)
+		return (NULL);
+	num_of_str = ft_count(s, c);
+	str_arr = (char **)malloc((num_of_str + 1) * sizeof(char *));
+	if (!str_arr)
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		substr_len = 0;
+		while (s[substr_len] && s[substr_len] != c)
+			substr_len++;
+		str_arr[i] = ft_substr(s, 0, substr_len);
+		if (!str_arr[i])
+		{
+			ft_free_split(str_arr);
+			return (NULL);
+		}
+		s += substr_len;
+		i++;
+		num_of_str--;
+	}
+	str_arr[i] = NULL;
+	return (str_arr);
 }
 
 char	**ft_split(char const *s, char c)
