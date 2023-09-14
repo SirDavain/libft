@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:46:56 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/13 10:18:53 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/14 11:32:36 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	src_len;
-	
+
 	src_len = ft_strlen(src);
 	i = 0;
 	while (src[i] && i < size - 1)
