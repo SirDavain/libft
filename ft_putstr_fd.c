@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 09:58:48 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/11 10:09:58 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/14 14:12:01 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	while (s[i])
 	{
-		fd = write(1, &s[i], 1);
+		write(fd, &s[i], 1);
 		i++;
 	}
 }
