@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:23:44 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/13 16:43:13 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/14 13:47:27 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
-	char			tmp;
 
 	if (!s || !f)
 		return ;
