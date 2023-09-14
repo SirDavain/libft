@@ -6,21 +6,11 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:11:28 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/13 16:41:13 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/14 11:59:09 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strrchr(const char *s, int c)
 {

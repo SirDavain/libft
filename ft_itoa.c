@@ -6,21 +6,11 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:14:51 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/11 13:16:47 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/14 11:55:14 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 static int	ft_num_count(int n)
 {

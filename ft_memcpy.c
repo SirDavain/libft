@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 10:44:35 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/06 15:00:06 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/14 11:55:45 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (un_dest);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void)
 {
 	unsigned char dest[50];
@@ -39,4 +39,4 @@ int main(void)
 
 	ft_memcpy(dest, src, n);
 	printf("%s", dest);
-}
+}*/
