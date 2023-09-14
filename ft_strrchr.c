@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:11:28 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/14 11:59:09 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/14 14:07:25 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
 	i = ft_strlen(s) - 1;
 	while (i >= 0)
@@ -26,19 +26,19 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 
-/*#include <stdio.h>
-int	main(void)
-{
-	const char	*s;
-	int			c;
-	char		*result;
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	const char	*s;
+// 	int			c;
+// 	char		*result;
 
-	s = "Hello";
-	c = 'e';
-	result = ft_strrchr(s, c);
+// 	s = "Hello";
+// 	c = 'H';
+// 	result = ft_strrchr(s, c);
 
-	if (result != NULL)
-		printf("%c", *result);
-	else
-		printf("Char not found.\n");
-}*/
+// 	if (result != NULL)
+// 		printf("%c", *result);
+// 	else
+// 		printf("Char not found.\n");
+// }
