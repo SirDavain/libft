@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 10:44:35 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/14 17:28:26 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/15 11:02:26 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*un_src;
 
 	if (!dest || !src || !n)
-		return ;
+		return (NULL);
 	un_dest = (unsigned char *)dest;
 	un_src = (unsigned char *)src;
 	i = 0;
-	while (un_src[i] && n)
+	while (un_src[i] && i < n)
 	{
 		un_dest[i] = un_src[i];
 		i++;
-		n--;
 	}
-	return (un_dest);
+	return ((void *)un_dest);
 }
 
 /*#include <stdio.h>

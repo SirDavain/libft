@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:11:28 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/14 14:51:39 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/15 10:56:05 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	if (!s)
-		return ;
+		return (NULL);
 	i = ft_strlen(s) - 1;
 	while (i >= 0)
 	{

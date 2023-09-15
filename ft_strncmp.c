@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:22:44 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/14 17:24:51 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/15 10:56:42 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		else
 			return (0);
 	}
-	return (NULL);
+	return (0);
 }
