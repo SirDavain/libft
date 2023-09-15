@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:03:47 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/15 10:55:32 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/15 11:56:20 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,19 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (c == '\0')
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 int	main(void)
 {
-	const char	*s;
-	int			c;
-	char		*result;
+	char		*src = "He \0 llo";
+	char		*test = ft_strchr(src, '\0');
 
-	s = "Hello";
-	c = 'e';
-	result = ft_strchr(s, c);
-
-	if (result != NULL)
-		printf("%c", *result);
+	if (test != NULL)
+		printf("%c", *test);
 	else
 		printf("Char not found.\n");
-}*/
+}
