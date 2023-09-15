@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 09:53:47 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/14 13:12:43 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/15 12:37:34 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (un_s1[i] > un_s2[i])
 		return (1);
 	else if (un_s1[i] < un_s2[i])
-		return (1);
+		return (-1);
 	else
 		return (0);
 }
