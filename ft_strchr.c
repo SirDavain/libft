@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:03:47 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/15 11:56:20 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/15 11:57:34 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	char		*src = "He \0 llo";
-	char		*test = ft_strchr(src, '\0');
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char		*src = "He \0 llo";
+// 	char		*test = ft_strchr(src, '\0');
 
-	if (test != NULL)
-		printf("%c", *test);
-	else
-		printf("Char not found.\n");
-}
+// 	if (test != NULL)
+// 		printf("%c", *test);
+// 	else
+// 		printf("Char not found.\n");
+// }
