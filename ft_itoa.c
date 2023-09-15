@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:14:51 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/14 11:55:14 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/15 11:25:09 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_itoa(int n)
 {
 	char	*s;
 	int		sign;
-	int		length;
+	long	length;
 
 	sign = 1;
 	if (n < 0)
