@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:22:44 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/15 12:18:13 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/18 10:25:43 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	un_s1 = (unsigned char *)s1;
 	un_s2 = (unsigned char *)s2;
 	i = 0;
-	if (un_s1 && un_s2)
-	{
-		while (un_s1[i] == un_s2[i] && n > i)
-			i++;
-		if (un_s1[i] > un_s2[i])
-			return (1);
-		else if (un_s1[i] < un_s2[i])
-			return (-1);
-		else
-			return (0);
-	}
-	return (0);
+	while (un_s1[i] == un_s2[i] && n > i)
+		i++;
+	if (un_s1[i] > un_s2[i])
+		return (1);
+	else if (un_s1[i] < un_s2[i])
+		return (-1);
+	else
+		return (0);
 }
 
 // #include <stdio.h>

@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:40:44 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/15 11:18:47 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/18 10:26:42 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ char	*ft_strdup(const char *s)
 	int			i;
 	int			length;
 
-	if (!s)
-		return (NULL);
 	length = ft_strlen(s);
 	s1 = (char *)malloc((length + 1) * sizeof(char));
 	if (s1 == NULL)

@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:01:58 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/15 11:39:10 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/18 10:21:20 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t			i;
 
-	if (!dest || !src || !n)
-		return (NULL);
 	if ((unsigned char *)dest > (unsigned char *)src
 		&& (unsigned char *)src + n > (unsigned char *)dest)
 	{
