@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:26:07 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/18 10:26:15 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/18 10:58:08 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	x = (unsigned char *)s;
 	un_c = (unsigned char)c;
 	i = 0;
-	while (x[i] && n > i)
+	while (n > i)
 	{
 		if (un_c == x[i])
 			return ((void *)(x + i));
