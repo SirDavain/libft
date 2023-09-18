@@ -6,17 +6,27 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:11:28 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/18 10:45:04 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/18 11:34:13 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (s[i])
+// 		i++;
+// 	return (i);
+// }
+
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
-	i = ft_strlen(s) - 1;
+	i = ft_strlen(s);
 	while (i >= 0)
 	{
 		if (c == s[i])
@@ -33,8 +43,8 @@ char	*ft_strrchr(const char *s, int c)
 // 	int			c;
 // 	char		*result;
 
-// 	s = "Hello";
-// 	c = 'H';
+// 	s = "Hell\0o";
+// 	c = '\0';
 // 	result = ft_strrchr(s, c);
 
 // 	if (result != NULL)

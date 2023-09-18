@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 09:53:47 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/18 11:04:49 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/18 12:39:33 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (n == 0)
 		return (0);
 	i = 0;
-	while (un_s1[i] == un_s2[i] && n > i && un_s1[i] && un_s2[i])
+	while (i < n)
+	{
+		if (un_s1[i] > un_s2[i])
+			return (1);
+		if (un_s1[i] < un_s2[i])
+			return (-1);
 		i++;
-	if (un_s1[i] > un_s2[i])
-		return (1);
-	else if (un_s1[i] < un_s2[i])
-		return (-1);
-	else
-		return (0);
+	}
+	return (0);
 }
 
 // #include <stdio.h>
@@ -75,6 +76,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // 	char *s1 = "atoms\0\0\0\0";
 // 	char *s2 = "atoms\0abc";
 // 	int	result;
-// 	result = ft_memcmp(s1, s2, 20);
+// 	result = ft_memcmp(s1, s2, 8);
 // 	printf("%i", result);
 // }
