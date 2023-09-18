@@ -6,7 +6,7 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:30:01 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/18 12:18:03 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/18 13:26:17 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	j;
-	char	*s;
+	size_t		i;
+	size_t		j;
+	const char	*s;
 
 	s = src;
 	i = 0;
