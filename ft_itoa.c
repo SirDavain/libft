@@ -6,11 +6,21 @@
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:14:51 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/15 11:25:09 by dulrich          ###   ########.fr       */
+/*   Updated: 2023/09/19 13:00:14 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
 
 static int	ft_num_count(int n)
 {
@@ -62,28 +72,36 @@ char	*ft_itoa(int n)
 {
 	char	*s;
 	int		sign;
-	long	length;
+	int		length;
+	long	long_n;
 
+	long_n = n;
+	if (long_n == 0)
+		return (ft_strdup("0"));
+	length = ft_num_count(long_n) + 1;
 	sign = 1;
 	if (n < 0)
 	{
 		sign = -1;
-		n = -n;
+		long_n = -long_n;
+		s = (char *)malloc((length + 2) * sizeof(char));
 	}
-	length = ft_num_count(n);
-	s = (char *)malloc((length + (sign == -1) + 1) * sizeof(char));
+	else
+		s = (char *)malloc(length * sizeof(char));
 	if (!s)
 		return (NULL);
-	s[0] = '\0';
-	ft_fill_string(s, n, sign);
+	ft_fill_string(s, long_n, sign);
 	ft_reverse(s);
+	s[length + 1] = '\0';
 	return (s);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 int	main(void)
 {
-	int		n = -42;
+	int		n = -3;
 	char	*result = ft_itoa(n);
 	printf("%s", result);
-}*/
+	free(result);
+	return (0);
+}
