@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dulrich <dulrich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 10:14:51 by dulrich           #+#    #+#             */
-/*   Updated: 2023/09/19 13:00:14 by dulrich          ###   ########.fr       */
+/*   Created: 2023/09/19 15:23:24 by dulrich           #+#    #+#             */
+/*   Updated: 2023/09/19 16:03:29 by dulrich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,85 +22,89 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-static int	ft_num_count(int n)
+char	*ft_strdup(const char *s)
 {
-	int	length;
+	char		*s1;
+	int			i;
+	int			length;
 
-	length = 1;
-	while (n >= 10)
-	{
-		n /= 10;
-		length++;
-	}
-	return (length);
-}
-
-static void	ft_fill_string(char *s, int n, int sign)
-{
-	int	i;
-
+	length = ft_strlen(s);
+	s1 = (char *)malloc((length + 1) * sizeof(char));
+	if (s1 == NULL)
+		return (NULL);
 	i = 0;
-	while (n > 0)
+	while (length > i)
 	{
-		s[i] = '0' + (n % 10);
-		n /= 10;
+		s1[i] = s[i];
 		i++;
 	}
-	if (sign < 0)
-		s[i] = '-';
+	s1[i] = '\0';
+	return (s1);
 }
 
-static void	ft_reverse(char *s)
+static int	ft_count_num(int n)
 {
-	int		i;
-	int		j;
-	char	tmp;
+	int	len;
 
-	i = 0;
-	j = ft_strlen(s) - 1;
-	while (i < j)
+	len = 0;
+	if (len <= 0)
+		len = 1;
+	while (n != 0)
 	{
-		tmp = s[i];
-		s[i] = s[j];
-		s[j] = tmp;
-		i++;
-		j--;
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
+static int	ft_handle_negative_nbr(char *s, int n, int offset)
+{
+	if (n < 0)
+	{
+		s[0] = '-';
+		offset = 1;
+		return (-n);
+	}
+	return (n);
+}
+
+static void	ft_to_str(char *s, int n, int len)
+{
+	while (len > 0)
+	{
+		len--;
+		s[len] = '0' + (n % 10);
+		n /= 10;
 	}
 }
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	int		sign;
-	int		length;
-	long	long_n;
+	int		len;
+	char	s;
+	int		offset;
 
-	long_n = n;
-	if (long_n == 0)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
 		return (ft_strdup("0"));
-	length = ft_num_count(long_n) + 1;
-	sign = 1;
-	if (n < 0)
-	{
-		sign = -1;
-		long_n = -long_n;
-		s = (char *)malloc((length + 2) * sizeof(char));
-	}
-	else
-		s = (char *)malloc(length * sizeof(char));
+	len = ft_count_num(n);
+	s = malloc(len + 1);
 	if (!s)
-		return (NULL);
-	ft_fill_string(s, long_n, sign);
-	ft_reverse(s);
-	s[length + 1] = '\0';
+		return (0);
+	s[len] = '\0';
+	offset = 0;
+	n = ft_handle_negative_nbr(s, n, offset);
+	ft_to_str(s + offset, n, len - offset);
 	return (s);
 }
 
 #include <stdio.h>
 int	main(void)
 {
-	int		n = -3;
-	char	*result = ft_itoa(n);
+	//int	n = 9;
+	//int		n = 0;
+	char	*result = ft_itoa(-900);
 	printf("%s", result);
 	free(result);
 	return (0);
