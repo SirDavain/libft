@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+cc/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
@@ -24,26 +24,26 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (p);
 }
 
-/*#include <stdio.h>
+// #include <stdio.h>
 
-int main(void)
-{
-	size_t	numofelem = 4;
-	size_t	size = sizeof(int);
-	int		*arr = (int *)ft_calloc(numofelem, size);
-	size_t	i;
+// int main(void)
+// {
+// 	size_t	numofelem = 4;
+// 	size_t	size = sizeof(int);
+// 	int		*arr = (int *)ft_calloc(numofelem, size);
+// 	size_t	i;
 
-	if (arr != NULL)
-	{
-		i = 0;
-		while (i < numofelem)
-		{
-			printf("Element %zu: %d\n", i, arr[i]);
-			i++;
-		}
-		free(arr);
-	}
-	else
-		printf("Memory allocation failed. \n");
-	return (0);
-}*/
+// 	if (arr != NULL)
+// 	{
+// 		i = 0;
+// 		while (i < numofelem)
+// 		{
+// 			printf("Element %zu: %d\n", i, arr[i]);
+// 			i++;
+// 		}
+// 		free(arr);
+// 	}
+// 	else
+// 		printf("Memory allocation failed. \n");
+// 	return (0);
+// }
