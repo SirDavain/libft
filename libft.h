@@ -16,9 +16,16 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <unistd.h>
+# include <stdio.h>
 # include <stdarg.h>
 # include <stdint.h>
+# include <fcntl.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+// libft
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -53,6 +60,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+// printf
 int		ft_printf(const char *str, ...);
 int		ft_putchar(char c);
 int		ft_putstr(char *str);
@@ -69,4 +78,11 @@ char	*ft_unsigned_itoa(unsigned int n);
 int		ft_putnbr(int n);
 int		ft_unsigned_putnbr(int n);
 
+// get next line
+char	*get_next_line(int fd);
+char	*read_newline(int fd, char *rline);
+char	*read2str(char *rline);
+char	*save_remainder(char *rline);
+char	*ft_new_strjoin(char *s1, char const *s2);
+char	*ft_new_strchr(const char *s, int c);
 #endif
